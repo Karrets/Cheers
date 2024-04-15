@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ContentPage
+    x:Class="Cheers.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:Cheers"
+    Title="Cheers"
+    mc:Ignorable="d">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid RowSpacing="10" Padding="15">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Grid RowSpacing="5"
+                      Grid.ColumnSpan="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.ColumnSpan="2"
+                           Text="Enter your age:">
+                    </Label>
+                    <DatePicker Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+                                DateSelected="LocationOrAgeChanged"
+                                x:Name="Age">
+                    </DatePicker>
+                    <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+                           Text="Enter your Country or Enable Location:">
+                    </Label>
+                    <Picker Grid.Row="3" Grid.Column="0"
+                            x:Name="CountryPicker"
+                            Title="Country"
+                            SelectedIndexChanged="LocationOrAgeChanged">
+                    </Picker>
+                    <Button Grid.Row="3" Grid.Column="1" Text="GPS Find" Clicked="FindLocationOnClicked"></Button>
+                </Grid>
+                <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Text="You may drink in: " HorizontalTextAlignment="Center" x:Name="Output"></Label>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
